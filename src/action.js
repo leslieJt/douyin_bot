@@ -75,6 +75,7 @@ const responseVideo = bot => async msg => {
       msg.chat.id,
       'Oops! something wrong, please try again late 😓'
     );
+    logger.error(err);
   }
 };
 
