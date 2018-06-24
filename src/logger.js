@@ -19,6 +19,7 @@ const logger = createLogger({
   levels: config.syslog.levels,
   format: myFormat,
   transports: [
+    new transports.Console(),
     new transports.File({
       filename: path.join(logDir, 'error.log'),
       level: 'error'
