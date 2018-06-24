@@ -58,7 +58,11 @@ const responseVideo = bot => async msg => {
     } = response;
     const videoInfo = await getVideoInfo(url);
 
-    logger.info(videoInfo);
+    logger.info({
+      u: videoInfo.username,
+      d: videoInfo.desc,
+      p: videoInfo.playAddr
+    });
 
     bot.sendVideo(msg.chat.id, videoInfo.playAddr, {
       supports_streaming: true,

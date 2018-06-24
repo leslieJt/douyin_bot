@@ -1,17 +1,23 @@
 const path = require('path');
+const moment = require('moment');
 const { createLogger, transports, format, config } = require('winston');
 
-const { combine, timestamp, printf } = format;
+const { printf } = format;
 
 const logDir = path.resolve(__dirname, '../logs');
 
+const timestamp = () =>
+  moment()
+    .format('YYYY-MM-DD HH:MM:ss')
+    .trim();
+
 const myFormat = printf(
-  info => `${info.level}\t${info.timestamp}\t${JSON.stringify(info.message)}`
+  info => `${info.level}:${timestamp()}:${JSON.stringify(info.message)}`
 );
 
 const logger = createLogger({
   levels: config.syslog.levels,
-  format: combine(timestamp(), myFormat),
+  format: myFormat,
   transports: [
     new transports.File({
       filename: path.join(logDir, 'error.log'),
