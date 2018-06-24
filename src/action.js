@@ -5,6 +5,10 @@ const logger = require('./logger');
 const dyUrl = 'https://dy.golmic.com/';
 
 /**
+ * @typedef {{avatar, username, desc, playAddr, cover}} VideoInfo
+ */
+
+/**
  * @private
  * @param {Object} msg
  * @returns {boolean} is msg a bot command
@@ -15,7 +19,7 @@ const isBotCommand = msg =>
 /**
  * @private
  * @param {string} pageUrl
- * @returns {{avatar, username, desc, playAddr, cover}} video info from given url
+ * @returns {VideoInfo} video info from given url
  */
 const getVideoInfo = async pageUrl => {
   const { data } = await axios.get(pageUrl);
@@ -48,7 +52,12 @@ const responseVideo = bot => async msg => {
 
     logger.info(videoInfo);
 
-    bot.sendMessage(msg.chat.id, JSON.stringify(videoInfo));
+    bot.sendVideo(msg.chat.id, videoInfo.playAddr, {
+      supports_streaming: true,
+      caption: `<b>@${videoInfo.username}</b>
+<a href="#">${videoInfo.desc}</a>`,
+      parse_mode: 'HTML'
+    });
   } catch (err) {
     bot.sendMessage(
       msg.chat.id,
