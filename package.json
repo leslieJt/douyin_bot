@@ -4,7 +4,8 @@
   "description": "A telegram bot for douyin[抖音]",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "serve": "pm2 start ./src/index.js"
   },
   "keywords": [
     "telegram",
