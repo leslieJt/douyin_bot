@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A telegram bot for douyin[抖音]",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
   "keywords": [
     "telegram",
     "telegram bot",
@@ -19,6 +21,8 @@
     "eslint-plugin-import": "^2.12.0"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "dotenv": "^6.0.0",
     "node-telegram-bot-api": "^0.30.0"
   }
