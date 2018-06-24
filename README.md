@@ -4,8 +4,17 @@
 
 A telegram bot for douyin[抖音]
 
+## Setup
+
+1.  `$ yarn or npm install`
+2.  `$ touch .env`
+3.  `$ echo TOKEN=YourToken > .env`
+4.  `$ yarn start`
+
 ## Documentation
 
+- [dotenv](https://github.com/motdotla/dotenv)
+- [create a new bot](https://core.telegram.org/bots)
 - [Telegram Bot Tutorials](https://github.com/yagop/node-telegram-bot-api/blob/master/doc/tutorials.md)
 
 _PR or star is welcome.☺_
