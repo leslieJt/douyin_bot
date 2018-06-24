@@ -40,6 +40,14 @@ const getVideoInfo = async pageUrl => {
 
 /**
  * @public
+ * bot on start
+ */
+const onStart = bot => msg => {
+  bot.sendMessage(msg.chat.id, 'input /next command to show video 😊');
+};
+
+/**
+ * @public
  * bot command callback
  */
 const responseVideo = bot => async msg => {
@@ -95,6 +103,7 @@ const handleError = bot => error => {
 };
 
 module.exports = {
+  onStart,
   responseVideo,
   showHelp,
   handleUnknownMessage,

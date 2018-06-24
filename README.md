@@ -4,4 +4,8 @@
 
 A telegram bot for douyin[抖音]
 
+## Documentation
+
+- [Telegram Bot Tutorials](https://github.com/yagop/node-telegram-bot-api/blob/master/doc/tutorials.md)
+
 _PR or star is welcome.☺_

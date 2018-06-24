@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const TelegramBot = require('node-telegram-bot-api');
 const {
+  onStart,
   responseVideo,
   showHelp,
   handleUnknownMessage,
@@ -10,7 +11,7 @@ const {
 
 const bot = new TelegramBot(process.env.TOKEN, { polling: true });
 
-bot.onText(/\/start/, responseVideo(bot));
+bot.onText(/\/start/, onStart(bot));
 bot.onText(/\/next/, responseVideo(bot));
 bot.onText(/\/help/, showHelp(bot));
 
