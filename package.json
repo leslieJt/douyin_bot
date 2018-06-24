@@ -1,0 +1,25 @@
+{
+  "name": "dyin_bot",
+  "version": "0.0.1",
+  "description": "A telegram bot for douyin[抖音]",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "telegram",
+    "telegram bot",
+    "douyin",
+    "抖音"
+  ],
+  "author": "leslieJt",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.12.0"
+  },
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "node-telegram-bot-api": "^0.30.0"
+  }
+}
