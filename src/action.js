@@ -51,29 +51,30 @@ const onStart = bot => msg => {
  */
 const responseVideo = bot => async msg => {
   bot.sendMessage(msg.chat.id, 'Sorry! this bot will not get any videos anymore 😭');
-  try {
-    const response = await axios.get(dyUrl);
-    const {
-      data: { url }
-    } = response;
-    const videoInfo = await getVideoInfo(url);
 
-    logger.info({
-      u: videoInfo.username,
-      d: videoInfo.desc,
-      p: videoInfo.playAddr
-    });
+  //   try {
+  //     const response = await axios.get(dyUrl);
+  //     const {
+  //       data: { url }
+  //     } = response;
+  //     const videoInfo = await getVideoInfo(url);
 
-    bot.sendVideo(msg.chat.id, videoInfo.playAddr, {
-      supports_streaming: true,
-      caption: `<b>@${videoInfo.username}</b>
-<a href="#">${videoInfo.desc}</a>`,
-      parse_mode: 'HTML'
-    });
-  } catch (err) {
-    bot.sendMessage(msg.chat.id, 'Oops! something wrong, please try again late 😓');
-    logger.error(err);
-  }
+  //     logger.info({
+  //       u: videoInfo.username,
+  //       d: videoInfo.desc,
+  //       p: videoInfo.playAddr
+  //     });
+
+  //     bot.sendVideo(msg.chat.id, videoInfo.playAddr, {
+  //       supports_streaming: true,
+  //       caption: `<b>@${videoInfo.username}</b>
+  // <a href="#">${videoInfo.desc}</a>`,
+  //       parse_mode: 'HTML'
+  //     });
+  //   } catch (err) {
+  //     bot.sendMessage(msg.chat.id, 'Oops! something wrong, please try again late 😓');
+  //     logger.error(err);
+  //   }
 };
 
 /**
