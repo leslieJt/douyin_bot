@@ -1,6 +1,6 @@
 # douyin_bot
 
-_停止维护： 由于各种原因，本项目停止维护，该 bot 将不可用。万分抱歉！_
+_停止维护： 由于各种原因，本项目停止维护，该 telegram bot 将不可用。万分抱歉！_
 
 [![https://telegram.me/dyin_bot](https://img.shields.io/badge/%F0%9F%92%AC%20Telegram-DouYin-blue.svg)](https://telegram.me/dyin_bot)
 
