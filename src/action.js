@@ -13,8 +13,7 @@ const dyUrl = 'https://dy.golmic.com/';
  * @param {Object} msg
  * @returns {boolean} is msg a bot command
  */
-const isBotCommand = msg =>
-  msg && msg.entities && msg.entities.some(e => e.type === 'bot_command');
+const isBotCommand = msg => msg && msg.entities && msg.entities.some(e => e.type === 'bot_command');
 
 /**
  * @private
@@ -51,6 +50,7 @@ const onStart = bot => msg => {
  * bot command callback
  */
 const responseVideo = bot => async msg => {
+  bot.sendMessage(msg.chat.id, 'Sorry! this bot will not get any videos anymore 😭');
   try {
     const response = await axios.get(dyUrl);
     const {
@@ -71,10 +71,7 @@ const responseVideo = bot => async msg => {
       parse_mode: 'HTML'
     });
   } catch (err) {
-    bot.sendMessage(
-      msg.chat.id,
-      'Oops! something wrong, please try again late 😓'
-    );
+    bot.sendMessage(msg.chat.id, 'Oops! something wrong, please try again late 😓');
     logger.error(err);
   }
 };
